@@ -1,7 +1,7 @@
 const skills = [
-  {text: 'Llama Feeding', Mastery: true, _id: 125223},
-  {text: 'Sleeping under the stars', Mastery: true, _id: 127904},
-  {text: 'Milk buying', Mastery: false, _id: 139608},
+  {text: 'Llama Feeding', mastery: true, _id: 125223},
+  {text: 'Sleeping under the stars', mastery: true, _id: 127904},
+  {text: 'Milk buying', mastery: false, _id: 139608},
 ]
 
 const find = (conditions, callback) => {
@@ -45,7 +45,7 @@ function findByIdAndDelete(id, callback) {
     // Find the index based on the _id of the skill object
     const idx = skills.findIndex(skill => skill._id == parseInt(id))
     const deletedSkill = skills.splice(idx, 1)
-    if (!deletedskill.length ) throw new Error ('No skill was deleted')
+    if (!deletedSkill.length ) throw new Error ('No skill was deleted')
     return callback(null, deletedSkill[0])
   } catch(error) {
     return callback(error, null)
